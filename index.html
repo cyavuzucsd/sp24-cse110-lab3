@@ -23,7 +23,6 @@
     <main>
         <section id="introduction">
             <h2>Introduction</h2>
-            <h3>Where we introduce ourselves</h3>
             <p>Welcome to the comprehensive overview of our latest meeting on the Pomodoro Timer project.</p>
         </section>
 
@@ -43,135 +42,15 @@
             <strong>Important:</strong> Finalize decisions by next meeting.
         </section>
 
-        <section>
+        <section id="miscellaneous">
             <h2>Miscellaneous Comments</h2>
             <details>
                 <summary>Click to view comments</summary>
-                <p><em>Concerns about API limitations were expressed. Particularly, the rate limits are <span>potentially problematic</span> for high-frequency users.</em></p>
+                <p><em>Concerns about API limitations were expressed. Particularly, the rate limits are potentially problematic for high-frequency users.</em></p>
             </details>
         </section>
 
-        <section>
-            <h2>Diagrams and Recordings</h2>
-            <div>
-                <img src="whiteboard.png" alt="Whiteboard sketch during the meeting">
-                <audio controls>
-                    <source src="screenshots/30seca.mp3.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <video controls>
-                    <source src="screenshots/30seconds.mp4" type="video/mp4">
-                    Your browser does not support the video element.
-                </video>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>Meeting documented by the web development team.</p>
-    </footer>
-
-    <aside>
-        <form id="forms">
-    <fieldset>
-        <legend>Meeting Feedback Form</legend>
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name"><br><br>
-
-        <label>Date of feedback:</label>
-        <input type="date" name="feedback-date"><br><br>
-
-        <!-- Using select for fixed role options -->
-        <label for="role-select">Your Role:</label>
-        <select id="role-select">
-            <option>Developer</option>
-            <option>Manager</option>
-            <option>Designer</option>
-            <option>Tester</option>
-            <option>Product Owner</option>
-        </select><br><br>
-
-        <!-- Using datalist for suggesting possible project names in a text input -->
-        <label for="project-name">Project Name:</label>
-        <input list="projects" id="project-name" name="project-name">
-        <datalist id="projects">
-            <option value="Pomodoro Timer">
-            <option value="Weather App">
-            <option value="E-commerce System">
-            <option value="Task Manager">
-        </datalist><br><br>
-
-        <label>Project Progress:</label>
-        <input type="radio" name="progress" value="on-track"> On Track
-        <input type="radio" name="progress" value="delayed"> Delayed<br><br>
-
-        <label>Include in next agenda:</label>
-        <input type="checkbox" name="next-agenda" value="yes"> Yes
-        <input type="checkbox" name="next-agenda" value="no"> No<br><br>
-
-        <label for="comments">Comments:</label>
-        <textarea id="comments" name="comments"></textarea><br><br>
-
-        <button type="submit">Submit Feedback</button>
-    </fieldset>
-</form>
-
-    </aside>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprehensive Meeting Notes</title>
-    <meta name="description" content="Detailed notes of the Pomodoro Timer project meeting, including diagrams and multimedia recordings.">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-</head>
-<body>
-    <header>
-        <h1>Project Meeting: Pomodoro Timer Development</h1>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#agenda">Meeting Agenda</a></li>
-            <li><a href="#new-business">New Business</a></li>
-            <li><a href="#forms">Feedback Form</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section id="introduction">
-            <h2>Introduction</h2>
-            <p>Welcome to the comprehensive overview of our latest meeting on the Pomodoro Timer project.</p>
-        </section>
-
-        <section id="agenda">
-            <h2>Agenda</h2>
-            <ol>
-                <li>Review of previous meeting action items</li>
-                <li>Discussion on new features for the timer</li>
-                <li>Feedback and closing remarks</li>
-            </ol>
-        </section>
-
-        <section id="new-business">
-            <h2>New Business</h2>
-            <p>Discussion on potential integrations with productivity platforms.</p>
-            <hr>
-            <strong>Important:</strong> Finalize decisions by next meeting.
-        </section>
-
-        <section>
-            <h2>Miscellaneous Comments</h2>
-            <details>
-                <summary>Click to view comments</summary>
-                <p><em>Concerns about API limitations were expressed. Particularly, the rate limits are <span>potentially problematic</span> for high-frequency users.</em></p>
-            </details>
-        </section>
-
-        <section>
+        <section id="media">
             <h2>Diagrams and Recordings</h2>
             <div>
                 <img src="whiteboard.png" alt="Whiteboard sketch during the meeting">
@@ -198,15 +77,26 @@
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name"><br><br>
 
-                <label>Date of feedback:</label>
-                <input type="date" name="feedback-date"><br><br>
+                <label for="feedback-date">Date of feedback:</label>
+                <input type="date" id="feedback-date" name="feedback-date"><br><br>
 
-                <label>Your role:</label>
-                <select>
+                <label for="role-select">Your Role:</label>
+                <select id="role-select">
                     <option>Developer</option>
                     <option>Manager</option>
                     <option>Designer</option>
+                    <option>Tester</option>
+                    <option>Product Owner</option>
                 </select><br><br>
+
+                <label for="project-name">Project Name:</label>
+                <input list="projects" id="project-name" name="project-name">
+                <datalist id="projects">
+                    <option value="Pomodoro Timer">
+                    <option value="Weather App">
+                    <option value="E-commerce System">
+                    <option value="Task Manager">
+                </datalist><br><br>
 
                 <label>Project Progress:</label>
                 <input type="radio" name="progress" value="on-track"> On Track
