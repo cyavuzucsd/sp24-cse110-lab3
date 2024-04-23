@@ -1,3 +1,3 @@
-# Lab 2 - Starter
+# Lab 3
 
 https://cyavuzucsd.github.io/Lab2_Starter/
