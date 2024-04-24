@@ -1,29 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
 /* General Reset */
+:root {
+    --header-bg-color: #0077cc; /* Main background color for headers */
+}
+
+* {
+    box-sizing: border-box; /* Ensures padding and borders are included in the element's total width and height */
+    margin: 0; /* Removes default margins from all elements */
+    padding: 0; /* Removes default padding from all elements */
+}
+
 body, h1, h2, h3, p, ul, li, figure, figcaption, blockquote, dl, dd {
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: rgb(51, 51, 51);
     background-color: #f4f4f4;
     padding: 20px;
 }
 
 header {
-    background: #0077cc;
+    background: var(--header-bg-color, #005fa3);
     color: white;
-    padding: 10px 20px;
+    padding: 1em;
     text-align: center;
+    position: sticky; /* Makes the header stick at the top of the viewport on scroll */
+    top: 0;
 }
 
 nav ul {
+    display: flex; /* Sets the display to flex to enable flexbox properties */
+    justify-content: center; /* Centers children horizontally */
+    align-items: center; /* Centers children vertically */
     list-style: none;
     background: #333;
     text-align: center;
-    padding: 10px;
+    padding: 10px 0;
+    position: relative;
+}
+
+nav > ul {
+    /* Styles for ul directly inside nav */
+    background-color: #333;
+    padding: 10px 0;
 }
 
 nav ul li {
@@ -32,8 +56,8 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
-    padding: 15px 20px;
+    color: #FFF; /* Shorthand for white */
+    padding: 0.75em 1em;
 }
 
 nav ul li a:hover {
@@ -41,32 +65,72 @@ nav ul li a:hover {
 }
 
 main {
-    max-width: 800px;
+    display: grid; /* Enables grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Creates two columns of equal width */
+    grid-gap: 20px; /* Sets the gap between grid items */
+    max-width: 80vw;
     margin: 20px auto;
     background: white;
     padding: 20px;
     box-shadow: 0 0 10px #ccc;
 }
 
+div:has(p) {
+    background-color: lightblue;
+}
+
 section {
+    margin-bottom: 1em;
+}
+
+section {
+    /* Styles for section element */
     margin-bottom: 20px;
+
+    /* Nested selector for styling p elements within section */
+    & p {
+        /* Styles for p elements */
+        font-size: 16px;
+        color: #333;
+    }
 }
 
 h1, h2, h3 {
-    color: #333;
+    color: color(srgb 51 51 51); /* sRGB equivalent of #333 */
 }
+
+h1 ~ h2 {
+    /* Styles for h2 elements that are siblings of h1 elements */
+    font-style: italic;
+    color: #888;
+}
+
+h2 + p {
+    /* Styles for p elements that are immediately preceded by h2 elements */
+    font-style: italic;
+    color: #888;
+}
+
 
 footer {
     text-align: center;
     padding: 20px 10px;
-    background: #0077cc;
-    color: white;
+    background: hsl(204, 100%, 40%); /* HSL equivalent of #0077cc */
+    color: hsl(0, 0%, 100%); /* HSL equivalent of white */
+    margin: 0.5in;
 }
 
 aside {
     background: #f9f9f9;
-    padding: 20px;
+    padding: 1cm;
     margin: 10px 0;
+    border-style: dotted; /* Added border style */
+    border-color: grey; /* Added border color */
+    border-width: 2px; /* Added border width */
+    border-radius: 10px; 
+    height: 100px;
+    min-width: 300px; 
+    width: 50%; 
 }
 
 input[type="text"],
@@ -81,11 +145,16 @@ textarea {
 }
 
 button {
-    background-color: #0077cc;
-    color: white;
-    border: none;
+    display: inline-block;
+    background-color: #0077cc;  /* Keep the background color as deep blue */
+    color: color-mix(in srgb, #0077cc 30%, #FFFFFF 70%); /* Text color is a lighter shade of blue */
+    border-style: solid; /* Added border style */
+    border-color: white; /* Added border color */
+    border-width: 1px; /* Added border width */
+    border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
+
 }
 
 button:hover {
@@ -97,6 +166,17 @@ img {
     height: auto;
 }
 
+#mainHeader {
+    background-color: #0077cc; /* Blue background */
+    color: white;            /* White text */
+    padding: 20px;           /* Padding around the text */
+    text-align: center;      /* Center-align the text */
+}
+
+.hidden-element {
+    display: none; /* Example class to demonstrate hiding an element */
+}
+
 @media (max-width: 768px) {
     nav ul li {
         display: block;
@@ -105,4 +185,39 @@ img {
     main, aside {
         width: auto;
     }
+}
+
+@media (max-width: 1024px) {
+    body {
+        font-size: 16px; /* Slightly larger font for readability */
+    }
+    nav ul {
+        padding: 20px; /* More padding for easier tapping */
+    }
+    /* Other tablet-specific styles */
+}
+
+/* Responsive Adjustments for Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Adjust font size for small screens */
+    }
+    h1, h2, h3 {
+        margin-bottom: 15px; /* More space around headers */
+    }
+    nav ul li {
+        padding: 15px; /* Larger touch targets */
+    }
+    /* Other mobile-specific styles */
+}
+
+/* Existing Media Queries (max-width: 768px) */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+    }
+    main, aside {
+        width: auto;
+    }
+    /* Other existing responsive styles */
 }
