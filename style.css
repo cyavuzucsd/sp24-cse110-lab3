@@ -94,7 +94,7 @@ section {
 }
 
 h1, h2, h3 {
-    color: color(from green srgb r g b / 0.5)
+    color: color(a98-rgb 1 0 0);
 }
 
 h1 ~ h2 {
@@ -145,7 +145,7 @@ textarea {
 button {
     display: inline-block;
     background-color: #0077cc;  /* Keep the background color as deep blue */
-    color: color-mix(in lch, plum, pink);
+    color: color-mix(in srgb, #34c9eb, white);
     border-style: solid; /* Added border style */
     border-color: white; /* Added border color */
     border-width: 1px; /* Added border width */
