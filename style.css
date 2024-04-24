@@ -84,19 +84,17 @@ section {
 }
 
 section {
-    /* Styles for section element */
     margin-bottom: 20px;
 
     /* Nested selector for styling p elements within section */
     & p {
-        /* Styles for p elements */
         font-size: 16px;
         color: #333;
     }
 }
 
 h1, h2, h3 {
-    color: color(srgb 51 51 51); /* sRGB equivalent of #333 */
+    color: color(display-p3 51 51 51); /* sRGB color value */
 }
 
 h1 ~ h2 {
@@ -147,7 +145,7 @@ textarea {
 button {
     display: inline-block;
     background-color: #0077cc;  /* Keep the background color as deep blue */
-    color: color-mix(in srgb, #0077cc 30%, #FFFFFF 70%); /* Text color is a lighter shade of blue */
+    color: color-mix(color(display-p3 #0077cc) 30%, color(display-p3 #FFFFFF) 70%);
     border-style: solid; /* Added border style */
     border-color: white; /* Added border color */
     border-width: 1px; /* Added border width */
