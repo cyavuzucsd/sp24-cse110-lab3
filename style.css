@@ -8,7 +8,7 @@
 * {
     box-sizing: border-box; /* Ensures padding and borders are included in the element's total width and height */
     margin: 0; /* Removes default margins from all elements */
-    padding: 0; /* Removes default padding from all ele */
+    padding: 0; /* Removes default padding from all e */
 }
 
 body, h1, h2, h3, p, ul, li, figure, figcaption, blockquote, dl, dd {
