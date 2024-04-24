@@ -94,7 +94,7 @@ section {
 }
 
 h1, h2, h3 {
-    color: color(a98-rgb 1 0 0);
+    color: color(srgb 1 0 0);
 }
 
 h1 ~ h2 {
